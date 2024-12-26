@@ -7,7 +7,7 @@ function App() {
   const [bulbState, setBulbState] = useState('OFF'); // Initial state of the bulb
 
   useEffect(() => {
-    wsRef.current = new WebSocket('wss://week8-ws.onrender.com:443');
+    wsRef.current = new WebSocket('wss://week8-0ka8.onrender.com');
     setWs(wsRef.current);
   }, []);
 
@@ -40,7 +40,7 @@ function App() {
     // Send the new state to the server
     try {
       ws.send(
-        JSON.stringify({ message: 'update', name: 'bulb', state: state })
+        JSON.stringify({ message: 'update', name: 'Led', state: state })
       );
     } catch (error) {
       console.log('Error:', error.message);
